@@ -1,20 +1,24 @@
-const mongoose = require('mongoose')
-const Schema = mongoose.Schema;
+const mongoose = require('mongoose');
+const schema = mongoose.Schema;
 
-const studentSchema = new Schema({
+     // Creating Schema
+const studentSchema = new schema ({
+
     firstname:{
-        type: String,
-        required:[true, "Firstname is requred"]
+        type:String,
+        required: [true,'Firstname is required']
     },
+
     lastname:{
-        type: String,
-        required:[true, "lasttname is requred"]
+        type:String,
+        required: [true,'Lastname is required']
     },
-    gender: { 
-        type: String
+
+    gender:{
+        type:String,
+        
     }
-
 });
-const Student = mongoose.model("student", studentSchema);
-module.exports = Student
 
+const Student = mongoose.model('Student',studentSchema); //create a model that is going to represent our collection in the DB.
+    module.exports = Student; //here we are exporting this file so that we can use it in other files.
